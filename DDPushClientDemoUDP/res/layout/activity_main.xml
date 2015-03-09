@@ -1,0 +1,267 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="org.ddpush.client.demo.udp.MainActivity"
+    tools:ignore="MergeRootFrame"
+    android:scrollbars="vertical"    
+    android:fadingEdge="vertical" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+        
+        <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+		    
+			    <TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="服务器IP:"/>
+			    
+			    <EditText
+				    android:id="@+id/demo_server_ip"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:hint="192.168.100.100"
+				    android:inputType="text" />
+
+	    </LinearLayout>
+	    
+       <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+
+			    <TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="UDP端口:"/>
+			    
+			    <EditText
+				    android:id="@+id/demo_server_port"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:hint="9966"
+				    android:inputType="number" />
+			    
+
+	    </LinearLayout>
+	    
+       <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+
+			    <TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="推送端口:"/>
+			    
+			    <EditText
+				    android:id="@+id/demo_push_port"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:hint="9999"
+				    android:inputType="number" />
+
+	    </LinearLayout>
+	    <TextView android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:text="用户名: （该字符串用于md5生成模拟uuid）"/>
+	    
+	    <EditText
+				    android:id="@+id/demo_user_name"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:hint="user01"
+				    android:inputType="text" />
+	    
+	    <Button 
+      	android:id="@+id/demo_start_button"
+      	android:layout_width="fill_parent"
+      	android:layout_height="wrap_content"
+      	android:text="开始测试"
+      	android:textColor="#333333"
+      	android:textSize="20sp" />
+		
+	   <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+			
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="当前服务器IP："/>
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/demo_cur_server_ip"
+						android:text=""/>
+
+		</LinearLayout>
+		
+	   <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+			
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="当前服务器端口："/>
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/demo_cur_server_port"
+						android:text=""/>
+
+		</LinearLayout>
+		
+	   <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+			
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="当前推送端口："/>
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/demo_cur_push_port"
+						android:text=""/>
+
+		</LinearLayout>
+		<LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+			
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="当前用户名："/>
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/demo_cur_user_name"
+						android:text=""/>
+
+		</LinearLayout>
+		
+		<LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+			    
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="uuid："/>
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/demo_cur_uuid"
+						android:text=""/>
+
+		</LinearLayout>
+	    
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+			
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="已发包："/>
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/demo_cur_sent_pkgs"
+						android:text="0"/>
+		</LinearLayout>
+		
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="已收包："/>
+		    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:id="@+id/demo_cur_receive_pkgs"
+						android:text="0"/>
+		</LinearLayout>
+		
+	    <TextView android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:text="  "/>
+	    
+	    <TextView android:layout_width="fill_parent"
+					android:layout_height="wrap_content"
+					android:text="目标用户名: 以下功能可以发送信息到目标用户"/>
+	    
+	    <EditText
+				    android:id="@+id/demo_target_user_name"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:hint="user01"
+				    android:inputType="text" />
+	    <Button 
+      	android:id="@+id/demo_send_0x10_button"
+      	android:layout_width="fill_parent"
+      	android:layout_height="wrap_content"
+      	android:text="发送通用推送信息"
+      	android:textColor="#333333"
+      	android:textSize="20sp" />
+	    
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+
+			    <TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="分类信息（long数字）:"/>
+			    
+			    <EditText
+				    android:id="@+id/demo_send_0x11_data"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:inputType="number" />
+
+	    </LinearLayout>
+	    
+	    <Button 
+      	android:id="@+id/demo_send_0x11_button"
+      	android:layout_width="fill_parent"
+      	android:layout_height="wrap_content"
+      	android:text="发送分类推送信息"
+      	android:textColor="#333333"
+      	android:textSize="20sp" />
+	    
+	    <LinearLayout
+	        android:layout_width="fill_parent"
+  			android:layout_height="wrap_content"
+	        android:orientation="horizontal" >
+
+			    <TextView android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="自定义信息（文字）:"/>
+			    
+			    <EditText
+				    android:id="@+id/demo_send_0x20_data"
+				    android:layout_width="fill_parent"
+				    android:layout_height="wrap_content"
+				    android:inputType="text" />
+
+	    </LinearLayout>
+	    
+	    <Button 
+      	android:id="@+id/demo_send_0x20_button"
+      	android:layout_width="fill_parent"
+      	android:layout_height="wrap_content"
+      	android:text="发送自定义推送信息"
+      	android:textColor="#333333"
+      	android:textSize="20sp" />
+        
+    </LinearLayout>
+
+</ScrollView>
+
