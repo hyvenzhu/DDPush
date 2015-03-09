@@ -134,7 +134,7 @@ public class PushTask implements Runnable {
 				//
 				//register write ops if not enough buffer
 				//if(key.isWritable()){
-					writeRes(); // 响应APPServer
+					writeRes(); // 将响应信息发给APPServer
 				//}
 			}
 		}catch(Exception e){
@@ -175,7 +175,7 @@ public class PushTask implements Runnable {
 				res = -1;
 			}
 			
-			// 相应信息 0表示成功
+			// 响应信息信息(0表示成功)
 			buffer.clear();
 			buffer.limit(1);
 			buffer.put(res);
