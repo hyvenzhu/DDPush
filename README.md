@@ -7,6 +7,6 @@ DDPush任意门推送，开源免费实时信息推送服务器，官网地址ht
 
 DDPush：服务端实现源码
 
-DDPushClientDemoTCP：UDP模式Android客户端DEMO
+DDPushClientDemoTCP：TCP模式Android客户端DEMO
 
-DDPushClientDemoUDP：TCP模式Android客户端DEMO
+DDPushClientDemoUDP：UDP模式Android客户端DEMO
