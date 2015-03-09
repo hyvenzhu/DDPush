@@ -113,8 +113,8 @@ public class NIOPushListener implements Runnable {
 		while(!stoped && selector != null){
 			try{
 				handleEvent();
-				handleTimeout();
-				handleChannel();
+				handleTimeout(); // 处理超时的APPServer连接
+				handleChannel(); // 处理通道事件
 			}catch(java.nio.channels.ClosedSelectorException cse){
 				//
 			}catch (java.nio.channels.CancelledKeyException nx) {
@@ -240,7 +240,7 @@ public class NIOPushListener implements Runnable {
 	                 //channel.socket().setReceiveBufferSize(1024);
 	                 //channel.socket().setSendBufferSize(1024);
 	                 PushTask task = new PushTask(this, channel);
-	                 // 像Selector注册读通道
+	                 // 向Selector注册读通道
 	                 channel.register(selector,SelectionKey.OP_READ, task);
             	 }catch(Exception e){
             		 e.printStackTrace();
