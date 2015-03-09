@@ -44,7 +44,7 @@ public class NodeStatus {
 	private static final int file_min_bytes_per_object = 77;
 	
 	private NodeStatus(){
-		nodeStat = new ConcurrentHashMap<String,ClientStatMachine>(10,0.75f,16);
+		nodeStat = new ConcurrentHashMap<String,ClientStatMachine>(10000000,0.75f,16);
 	}
 	
 	public static NodeStatus getInstance(){
