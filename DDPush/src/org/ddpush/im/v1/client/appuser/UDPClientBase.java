@@ -75,7 +75,7 @@ public abstract class UDPClientBase implements Runnable {
 	}
 	
 	/**
-	 * 将接受到的消息加入队列待处理
+	 * 将接收到的消息加入队列待处理
 	 * @param message
 	 * @return
 	 */
@@ -235,7 +235,7 @@ public abstract class UDPClientBase implements Runnable {
 		if(m.getCmd() == Message.CMD_0x00){ // DDPush响应终端的心跳包（DDPush服务器未必一定响应终端的心跳包，更多的时候服务器是不会响应心跳包的）
 			return;
 		}
-		// 将接受到的消息加入队列待处理
+		// 将接收到的消息加入队列待处理
 		this.enqueue(m);
 		// 唤醒消息处理线程
 		worker.wakeup();

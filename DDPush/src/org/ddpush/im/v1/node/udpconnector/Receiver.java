@@ -13,7 +13,7 @@ import org.ddpush.im.util.DateTimeUtil;
 import org.ddpush.im.util.StringUtil;
 import org.ddpush.im.v1.node.ClientMessage;
 /**
- * UDP模式接受终端消息
+ * UDP模式接收终端消息
  * @author hiphonezhu@gmail.com
  * @version [DDPush, 2015-3-8]
  */

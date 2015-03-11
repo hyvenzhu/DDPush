@@ -7,7 +7,7 @@ import org.ddpush.im.util.PropertyUtil;
 import org.ddpush.im.v1.node.ClientMessage;
 import org.ddpush.im.v1.node.ServerMessage;
 /**
- * UDPServer接受终端的连接, 并接受和发送消息
+ * UDPServer监听UDP数据包
  * @author hiphonezhu@gmail.com
  * @version [DDPush, 2015-3-8]
  */
