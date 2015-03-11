@@ -25,7 +25,7 @@ import org.ddpush.im.v1.node.ClientMessage;
 import org.ddpush.im.v1.node.ServerMessage;
 import org.ddpush.im.v1.node.udpconnector.UdpConnector;
 /**
- * UDP模式, 配合Receiver处理终端发送的信息, 并视情况返回"离线"的消息等
+ * UDP模式, 从Receiver的消息队列中取出消息, 再从内存中查找对应的状态机以及需要发送给终端的消息, 最后使用Sender将消息加入队列并发出去
  * @author hiphonezhu@gmail.com
  * @version [DDPush, 2015-3-8]
  */
